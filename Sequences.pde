@@ -4,53 +4,22 @@ Implementación de series (FIBONACCI, GOLOMB, ...) y graficación de las mismas
 Por Julián Salomón.
 */
 
-int enesimo=2;                                    //Editar la variable enesimo para cambiar hasta donde se desarrollará la serie
+int enesimo=1;                                    //Editar la variable enesimo para cambiar hasta donde se desarrollará la serie
 
-int[] primerosN=new int[enesimo+1];                //Array con los primeros n números
+int[] primerosN=new int[enesimo];                        //Array con los primeros n números
+int primeros_N=20;
 
 float x, y;
 
 int count;
-
-                            //INICIO funciones para implementación de Golomb
-                  
-int golomb(int n){                                 //Implementación función Golomb
-  if(n==1)                                         //Definición de wikipedia: a(1)=1
-    return 1;
-  if(n>1)                                          //a(n+1)=1+a(n+1-a(a(n)))
-    return 1+golomb(n-golomb(golomb(n-1)));        //a(n)=1+a(n-a(a(n-1)))
-  return 0;                                       //Casos indefinidos
-}
-
-/*float contarDivisiones(int n){
-  float divisiones=1;
-  while(golomb(n)==golomb(n-1)){
-    divisiones++;
-    n--;
-  }
-  return divisiones;
-}
-
-void dibujoGolomb(){
-  for(int i=0; i<=golomb(enesimo);i++){
-    rect(remapW(i),0,(width-1)/golomb(enesimo),height-1);
-    if(i>2){
-      for(int j=i; golomb(j)<=golomb(enesimo);j++){
-        line(remapW(i), i*height/contarDivisiones(j), remapW(i)+width/golomb(enesimo), i*height/contarDivisiones(j));
-      } 
-    }
-  } //<>//
-}*/
-                                //FIN funciones para implementación de Golomb
-                                
-
+ //<>//
 void dibujoSerie(int n, int serie){
   switch(serie){
     case 0:                                              //Implementación gráfico de serie Fibonacci
       dibujoFibonacci(n);
     break;
     case 1:                                              //Implementación gráfico de serie Golomb
-      //dibujoGolomb();
+      dibujoGolomb();
     break;
     case 2:                                              //Implementación gráfico de serie --------
     
@@ -58,12 +27,19 @@ void dibujoSerie(int n, int serie){
   }
 }
 
+void printSeq(){
+  println("Golomb      LS      Fibo");
+  /*for(int i=0; i<=;i++)
+    primerosN[i]=golomb(i);                           //Almacenamiento de los primeros n números*/
+    
+  for(int i=1; i<=primeros_N; i++)
+    println("  ", golomb(i), "       ", "      " , fibo(i));                            //Impresión de los primeros n números de la serie
+}
+
 void setup(){
   size(1000,500);
   smooth();
-  for(int i=0; i<=enesimo;i++)
-    primerosN[i]=golomb(i);                           //Almacenamiento de los primeros n números
-  printArray(primerosN);                            //Impresión de los primeros n números
+  printSeq();
 }
 
 int serie;
@@ -106,4 +82,4 @@ void mouseReleased(){
     println(enesimo);
     background(0);
   }
-}# POO
+}

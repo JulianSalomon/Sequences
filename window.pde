@@ -38,8 +38,6 @@ float remapH(float y){                             //Mapeo de coordenadas en hei
       return map(y,0,detHei(),0,height-1);
     case 2:
     break;
-    case 3:
-    break;
   }
   return 0;
-}# POO
+}
