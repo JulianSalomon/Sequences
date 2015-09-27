@@ -86,4 +86,5 @@ void dibujoFibonacci(int n){
   stroke(255);
 }
 
-                  //FIN funciones para implementación de Fibonacci# POO
+                  //FIN funciones para implementación de Fibonacci
+                  

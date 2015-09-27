@@ -38,3 +38,4 @@ void dibujoGolomb(){
  }
 }
                                 //FIN funciones para implementación de Golomb
+                                

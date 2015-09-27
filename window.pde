@@ -33,11 +33,5 @@ float remapW(float x){                             //Mapeo de coordenadas en wid
 }
 
 float remapH(float y){                             //Mapeo de coordenadas en height-1 ...
-  switch(serie){
-    case 0:
-      return map(y,0,detHei(),0,height-1);
-    case 2:
-    break;
-  }
-  return 0;
+  return map(y,0,detHei(),0,height-1);
 }
