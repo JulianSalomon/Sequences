@@ -1,8 +1,8 @@
 /* //<>//
 Implementación de series (FIBONACCI, GOLOMB, ...) y graficación de las mismas
  
- Por Julián Salomón.
- */
+Por Julián Salomón.
+*/
  
 import java.util.Arrays;                                //Tomado de http://docs.oracle.com/javase/7/docs/api/java/util/Arrays.html
                                                         //Utilizado para imprimir Array en consola con primerosN terminos

@@ -15,7 +15,7 @@ float detHei(){                                    //Función que determina el A
     case 0:
       if(enesimo%2==0)
         return fibo(enesimo);
-      return fibo(enesimo)+fibo(enesimo-1);
+      return fibo(enesimo+1);
     case 2:
     break;
   }
