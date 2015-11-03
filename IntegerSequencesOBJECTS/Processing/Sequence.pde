@@ -53,11 +53,22 @@ abstract class Sequence {
   */
   
   void drawTable(int valCompute, boolean lineV, boolean lineH){
-    rect(0,0, width-1, height-1);
-    for(int i=0; i<=n && lineV; i++)
-      line(map(i, 0, n, 0, width-1), 0, map(i, 0, n, 0, width-1), height-1);
-    for(int i=0; i<=valCompute && lineH; i++)
-      line(0, map(i,0,valCompute,0,height-1), width-1, map(i,0,valCompute,0,height-1));
+    rect(width/8, height/8, 6*width/8, 6*height/8);
+    textSize(15);
+    textAlign(RIGHT);
+    for(int i=0; i<=valCompute; i++){
+      text(valCompute-i, width/8, map(i,0,valCompute, height/8, 7*height/8));
+      if(lineH){
+        line(width/8, map(i,0,valCompute, height/8, 7*height/8), 7*width/8, map(i,0,valCompute, height/8, 7*height/8));
+      }
+    }
+    textAlign(CENTER);
+    for(int i=0; i<=n; i++){
+      text(i, map(i, 0, n, width/8, 7*width/8), 7*height/8+15);
+      if(lineV){
+        line(map(i, 0, n, width/8, 7*width/8), height/8, map(i, 0, n, width/8, 7*width/8), 7*height/8);
+      }
+    }
   } 
   
   int maxValue(int i){
@@ -84,9 +95,9 @@ abstract class Sequence {
     strokeWeight(10);
     stroke(0, 100, 100);
     for(int i=1; i<=n; i++){
-      x=map(i, 0, n, 0, width-1);
-      y=map(compute(i), 0, valCompute, 0, height-1);
-      line(x, height-1, x, height-1-y);
+      x=map(i, 0, n, width/8, 7*width/8);
+      y=map(compute(i), 0, valCompute, height/8, 7*height/8);
+      line(x, 7*height/8, x, height-y);
     }
     strokeWeight(1);
     stroke(255);
@@ -101,8 +112,8 @@ abstract class Sequence {
   void lineChart(int n) {
     //TODO misssing implementation
     int valCompute=maxValue(n);
-    x=map(1, 0, n, 0, width-1);
-    y=map(compute(1), 0, valCompute, 0, height-1);
+    x=map(1, 0, n, width/8, 7*width/8);
+    y=map(compute(1), 0, valCompute, height/8, 7*height/8);
     float xBak=x , yBak=y;
 
     strokeWeight(0.1);
@@ -110,8 +121,8 @@ abstract class Sequence {
     
     stroke(0, 100, 100);
     for(int i=1; i<=n; i++){
-      x=map(i, 0, n, 0, width-1);
-      y=map(compute(i), 0, valCompute, 0, height-1);
+      x=map(i, 0, n, width/8, 7*width/8);
+      y=map(compute(i), 0, valCompute, height/8, 7*height/8);
       strokeWeight(5);
       point(x, height-y);
       strokeWeight(3);
@@ -140,16 +151,16 @@ abstract class Sequence {
     stroke(0, 100, 100);
     beginShape();
     for(int i=0; i<=n+1; i++){
-      x=map(i, 0, n, 0, width-1);
-      y=map(compute(i), 0, valCompute, 0, height-1);
-      curveVertex(x,height-y-1);
+      x=map(i, 0, n, width/8, 7*width/8);
+      y=map(compute(i), 0, valCompute, height/8, 7*height/8);
+      curveVertex(x,height-y);
     }
     endShape();
     strokeWeight(1);
     stroke(255);
     strokeCap(ROUND);
   }
-  
+    
   float detWid(){                                    //Función que determina el Ancho para fibonacci
     if(n%2==0)
       return compute(n)+compute(n-1);
@@ -165,14 +176,14 @@ abstract class Sequence {
   float remapW(float x){                             //Mapeo de coordenadas en width-1 para ver cuadrículas correctamente
     switch(serie){
       case 0:
-        return map(x,0,detWid(),0,width-1);          //Para fibonacci
+        return map(x,0,detWid(),0,width);          //Para fibonacci
       case 1:
-        return map(x,0,compute(n),0,width-1);        //Para Golomb
+        return map(x,0,compute(n),0,width);        //Para Golomb
     }
     return 0;
   }
   
   float remapH(float y){                             //Mapeo de coordenadas en height-1 ... fibonacci
-    return map(y,0,detHei(),0,height-1);
+    return map(y,0,detHei(),0,height);
   }
 }

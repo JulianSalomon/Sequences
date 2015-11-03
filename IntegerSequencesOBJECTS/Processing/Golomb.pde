@@ -1,4 +1,4 @@
-class golomb extends Sequence{
+class Golomb extends Sequence{
 
   String author(){
     return "Solomon Wolf Golomb";
@@ -17,6 +17,7 @@ class golomb extends Sequence{
   }
 
   void display(int n){
+   textSize(50);
    int nAct=1;
    float div;
    float sizeWidth;

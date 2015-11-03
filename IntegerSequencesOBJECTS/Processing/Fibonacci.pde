@@ -1,4 +1,4 @@
-class fibonacci extends Sequence{  
+class Fibonacci extends Sequence{  
   String author(){
     return "Leonardo Bonacci";
   }
@@ -66,7 +66,6 @@ class fibonacci extends Sequence{
   void dibujoRect(int i, float nW, float nH){
     stroke(0,100,100);
     int a=compute(i);
-    float textX, textY;
     textSize(map(a,0,compute(n),5,50));
     switch(i%4){
       case 1:

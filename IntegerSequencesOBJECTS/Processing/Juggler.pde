@@ -1,4 +1,4 @@
-class juggler extends Sequence{
+class Juggler extends Sequence{
 
   String author(){
     return "Clifford Alan Pickover";
@@ -56,6 +56,7 @@ class juggler extends Sequence{
   }
   
   void display(int n){
+    textSize(15);
     int tam=tamArr(n);
     int arr[]=new int[tam];
     arr=juggler(n);
