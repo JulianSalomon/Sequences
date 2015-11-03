@@ -1,6 +1,7 @@
 # IntegerSequences
 
 2015-II Integer Sequences in Objects
+Implemented in Java and Processing, will be in Javascript soon.
 
 ## Important variables:
 
