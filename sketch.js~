@@ -4,7 +4,7 @@ var sequence, simulatedInheritance, NJ;
 var n=1, serie=0, mode=0, counter=0, present=true;  
 
 function setup(){
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(1368, 768);
   sequence = new Fibonacci();
   simulatedInheritance = new Sequence();
   NJ = new NeilJames();
