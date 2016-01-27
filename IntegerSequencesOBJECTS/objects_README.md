@@ -1,7 +1,9 @@
 # IntegerSequences
 
 2015-II Integer Sequences in Objects
-Implemented in Java and Processing, will be in Javascript soon.
+Implemented in Java, Processing and JAVASCRIPT!
+
+Javascript: JulianSalomon.github.io/Sequences/#/7
 
 ## Important variables:
 
@@ -14,7 +16,7 @@ Implemented in Java and Processing, will be in Javascript soon.
 1. Change sequence with  ">" and "<" keys (next and last respectly).
 2. The keys "," and "." change mode of graphic representation
 3. "+" and "-" keys increase and decrease the n value respectly.
-4. "p" prints first N numbers
+4. "p" prints first N numbers in Java and Processing
 
 ## WARNING
 
