@@ -3,7 +3,7 @@
 2015-II Integer Sequences in Objects
 Implemented in Java, Processing and JAVASCRIPT!
 
-Javascript: JulianSalomon.github.io/Sequences/#/7
+Try it: http://juliansalomon.github.io/Sequences/
 
 ## Important variables:
 
